@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 2</title>
+
+    <style type="text/css">
+        h1 {
+            color: rgb(40%, 80%, 90%);
+            font-size: 40px; 
+            padding: 10px;
+        }
+        div{
+            font-size: 40px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .shadow {
+            width: 15em;
+            border: 1px solid #333;
+            box-shadow: 8px 8px 5px #444;
+            padding: 8px 12px;
+            background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+        }
+        .textstyle{
+            color: red;
+        }
+        div#ID{
+            background-color: aquamarine;
+            font-size: 40px;
+        }
+        .posImage{
+            position: relative;
+            top: 5px;
+            left: 50px;
+            bottom: 50px;
+        }
+        .floatimage{
+            float: left;
+            border: 2px solid black;
+            margin-right: 50px;
+        }
+        .TableCSS{
+            display: flex;
+            justify-content: center;
+            table {
+                font-family: 'Times New Roman', Times, serif;
+                background-color: brown;
+                width: 900px;
+                height: 300px;
+                border-spacing: 0;
+                border: 5px solid brown;
+            }
+            tr:nth-last-child(even){
+                background: rgb(242, 245, 210);
+            }
+            tr:nth-last-child(odd){
+                background: white;
+            }
+            tr:first-child{
+                background: brown;
+                color: #fff
+            }
+            td:first-child{
+                text-align: left;
+                padding-left: 8px;
+            }
+            tr, td {  
+                text-align: center;
+                border-bottom: 2px solid brown;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">   
+    
+</head>
+<body>
+
+    <h1>Лабораторна робота 2 <br> Кардаш Артем Євгенович <br> Варіант 7</h1>
+    
+    <h1 style="color: blue; font-size: 33px; "><i>Завдання 1</i>: inline-опис стилю</h1>
+    <span style="color: rgb(255, 135, 0); font-size: 25px;">Текст з inline-описом</span>
+    <p style="color: #099246; font-size: 25px; font-family:'Courier New', Courier, monospace">Текст з inline-описом 2</p>
+
+    <h1 style="font-style: italic;">Завдання 2: Зовнішній файл CSS <h2>Заголовок h2</h2></h1>
+
+    <h1><i>Завдання 3</i>: показати використання стилів </h1>
+    <div class="shadow"> 
+        <p class="textstyle"> Показ використання стилів класів та селектора тегів</p>
+    </div>
+    <br>
+    <div id="ID">Показ використання стилів ідентифікаторів</div>
+
+    <h1><i>Завдання 4</i>: властивість position </h1>
+    <div style="position: relative; top: -30px; left:20px; border: 7px double black; width: 50%;">
+    <div class="posImage"><img src="Fun.jpg" alt="SpongeBob"></div>
+    </div>
+
+    <h1><i>Завдання 5</i>: властивість float </h1>
+    <img src="float.jpg" alt="Float text" class="floatimage">
+    <span style="font-size: 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ex eum quod placeat laborum repellat unde, eius itaque tenetur impedit odit ratione, quos dignissimos maiores? Magnam sit ad saepe obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aut hic sapiente eaque fugiat tenetur reprehenderit ab obcaecati quos sed dolorum doloribus ipsam porro consequuntur, nulla animi exercitationem? Aspernatur, perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa, eum eaque repudiandae ad cupiditate. Vel, unde maiores! Quaerat laborum in natus cum deleniti veniam tempore, recusandae earum fugit eligendi?</span>
+
+    <h1><i>Завдання 6</i>: Завдання варіанту 7</h1>
+    <p style="font-size: larger;">Додати на сторінку зображення, розмір якого варіюватиметься залежно від розміру вікна браузера: при max-width: 1200px, ширина зображення становить 600px, а при max-width: 800px - всього 400px. Застосовувати директиву media. <br> Додати на сторінку таблицю, центрувати її по горизонталі. Таблиця має бути оформлена згідно з прикладом. Обов'язково використовувати псевдокласи.</p>
+    <img src="example.jpg" alt="Table example" class="imagewid">
+
+    <div class="TableCSS">
+        <table>
+            <tr>
+                <td></td>
+                <td>2017</td>
+                <td>2018</td>
+                <td>2019</td>
+            </tr> 
+            <tr>
+                <td>ИТех</td>
+                <td>93</td>
+                <td>97</td>
+                <td>98</td>
+            </tr> 
+            <tr>
+                <td>КСх</td>
+                <td>91</td>
+                <td>98</td>
+                <td>97</td>
+            </tr>   
+            <tr>
+                <td>СПО</td>
+                <td>96</td>
+                <td>94</td>
+                <td>97</td>
+            </tr>       
+        </table>
+    </div>
+
+</body>
+</html>

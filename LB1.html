@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale = 1.0">
+    <title> Лабораторна робота 1 </title>
+</head>
+<body>
+    <h1>Лабораторна робота 1 <br>Кардаш Артем Євгенович</br> Варіант 2 </h1>
+
+    <h1><i>Завдання 1</i>: Оформлений текст</h1>
+    <p style="font-size: larger;"> 
+        Хімічна реакція <b>ортофосфорної</b> кислоти: 
+        P<sub>2</sub>O<sub>5</sub>+3H<sub>2</sub>O&rarr;H<sub>3</sub>PO<sub>4</sub> 
+    </p>
+
+    <h1 id="listh"><i>Завдання 2</i>: Список</h1>
+    <p style="font-size: larger;">Задача: Дворівневий список, що показує розподіл груп за спеціальностями (СП, КСМ...) або траекторіями (перша, друга...).</p>
+    <ol style="font-size: larger;" name="list" id="list">
+        <li>121 - Інженерія програмного забезпечення
+            <ul>
+                <li>ПЗПІ-22-1</li>
+                <li>ПЗПІ-22-2</li>
+                <li>ПЗПІ-22-3</li>
+            </ul>
+        </li>
+        <li>122 - Комп'ютерні науки
+            <ul>
+                <li>КІУКІ-22-1</li>
+                <li>КІУКІ-22-2</li>
+                <li>КІУКІ-22-3</li>
+            </ul>
+        </li>
+        <li>123 - Комп'ютерна інженерія
+            <ul>
+                <li>КНТ-22-1</li>
+                <li>КНТ-22-2</li>
+                <li>КНТ-22-3</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h1><i>Завдання 3</i>: Таблиця</h1>
+    <p style="font-size: larger;">Задача: Таблиця з даними прогнозу погоди.</p>
+    <label for="weather_table" style="font-size: larger;">Таблиця 1 - Прогноз погоди на Серпень, м. Харків</label>
+    <table border="1" name="weather_table" id="weather_table">
+        <thead>
+            <tr>
+                <th rowspan="2">День</th>
+                <th colspan="5">Дати</th>
+            </tr>
+            <tr>
+                <th>1-7</th>
+                <th>8-14</th>
+                <th>15-21</th>
+                <th>22-28</th>
+                <th>29-31</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <th>Понеділок</th>
+                <td>20&deg;</td>
+                <td>22&deg;</td>
+                <td>22&deg;</td>
+                <td>21&deg;</td>
+                <td>24&deg;</td>
+            </tr>
+            <tr>
+                <th>Вівторок</th>
+                <td>27&deg;</td>
+                <td>26&deg;</td>
+                <td>29&deg;</td>
+                <td>22&deg;</td>
+                <td>25&deg;</td>
+            </tr>
+            <tr>
+                <th>Середа</th>
+                <td>20&deg;</td>
+                <td>22&deg;</td>
+                <td>24&deg;</td>
+                <td>25&deg;</td>
+                <td>27&deg;</td>
+            </tr>
+            <tr>
+                <th>Четвер</th>
+                <td>17&deg;</td>
+                <td>18&deg;</td>
+                <td>19&deg;</td>
+                <td>20&deg;</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>П'ятниця</th>
+                <td>20&deg;</td>
+                <td>21&deg;</td>
+                <td>21&deg;</td>
+                <td>21&deg;</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Субота</th>
+                <td>20&deg;</td>
+                <td>26&deg;</td>
+                <td>25&deg;</td>
+                <td>27&deg;</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th>Неділя</th>
+                <td>20&deg;</td>
+                <td>19&deg;</td>
+                <td>18&deg;</td>
+                <td>20&deg;</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1><i>Завдання 4</i>: Форма с керуючими елементами</h1>
+    <p style="font-size: larger;">Задача: Форма для пошуку.</p>
+    <form action="#" method="post" name="form1" id="form1">
+        <fieldset >
+            <legend style="font-size: larger;">Форма для пошуку елемента сторінки</legend>
+            <label for="search" style="font-size: larger;">Введіть бажаний елемент:</label>
+            <input type="search" name="search" id="search" value="Таблиця">
+            <input type="submit" value="Пошук">
+        </fieldset>
+    </form>
+
+    <h1><i>Завдання 5</i>: Посилання та зображення</h1>
+    <p style="font-size: larger;">Задача: Відносне гіперпосилання для переходу до іншої сторінки цього ресурсу.</p>  
+    <label for="ref2" style="font-size: larger;">Перейти до списку:</label>
+    <a href="list.html" style="font-size: larger;" name="ref2" id="ref2" target="_blank">Список</a>
+
+    <h1><i>Захист</i></h1>
+    <form action="#" method="post" id="Reg" name = "form2">
+        <fieldset>
+            <legend style="font-size: larger;"> Форма реєстрації відвідувача сайту</legend>
+                <label for="formreg" style="font-size: larger;">Введіть ім'я користувача:</label>
+                <input type="text" name="formreg" id="formreg" value="Гость">
+                <label for="formpass" style="font-size: larger;">Введіть пароль користувача:</label>
+                <input type="password" name="formpass" id="formpass">
+                <button>Зареєструватись!</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>
