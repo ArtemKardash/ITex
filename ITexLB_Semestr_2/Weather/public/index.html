@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ІДЗ1 Моніторинг погоди</title>
+     <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1> Індивідуальне домашне завдання 1, семестр 2<br>Кардаш Артем Євгенович<br>
+        <br>Завдання: Клієнтська частина надає можливість вибору населеного пункту та частоти оновлення даних,
+        отримує від сервера фіктивні дані про погодні умови (поточна температура, опади, рівень 
+        тиску, швидкість вітру) і відображає їх користувачеві. Сервер лише імітує роботу - дані, 
+        що відправляютсья користувачеві, ніякого відношення до реальних не мають і просто 
+        генеруються випадковим чином із заданим інтервалом та надаються підключеним клієнтам. 
+    </h1>
+
+    <label for="city" style="font-size: larger;">Населений пункт:</label>
+    <select id="city" style="font-size: larger;">
+        <option value="Харків">Харків</option>
+        <option value="Київ">Київ</option>
+        <option value="Полтава">Полтава</option>
+    </select>
+    <br><br>
+    <label for="interval" style="font-size: larger;">Частота оновлення даних:</label>
+    <select id="interval" style="font-size: larger;">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+    </select>
+    <br><br>
+    <button id="start" style="font-size: larger;">Старт</button>
+    <h2>Погода:</h2>
+    <p id="result" style="font-size: larger;"></p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        var Button = document.getElementById('start');
+        var City = document.getElementById('city');
+        var Interval = document.getElementById('interval');
+        var Data = document.getElementById('result');
+
+        Button.onclick = () => {
+            var CityVal = City.value;
+            var IntervalVal = parseInt(Interval.value) * 1000;
+            console.log('Data:', {CityVal, IntervalVal});
+            socket.emit('Start', {CityVal, IntervalVal});
+        };
+
+        socket.on('WeatherMonitor', ({Temp, Rain, Pressure, Wind}) => {
+            Data.innerHTML = `
+            Температура: ${Temp} <br>
+            Опади: ${Rain} <br>
+            Рівень тиску: ${Pressure} <br>
+            Швидкість вітру: ${Wind}
+            `;
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+  <title>Socket.IO chat</title>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font: 13px Helvetica, Arial; }
+    form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+    form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+    form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages li { padding: 5px 10px; }
+    #messages li:nth-child(odd) { background: #eee; }
+    #messages { margin-bottom: 40px }
+  </style>
+</head>
+
+<body>
+  <ul id="messages"></ul>
+  <form action="">
+    <input id="m" autocomplete="off" /><button>Send</button>
+  </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+
+        $('form').submit(function(e){
+          e.preventDefault(); // prevents page reloading
+          socket.emit('send message', $('#m').val());
+          $('#m').val('');
+          return false;
+        });
+
+        socket.on('receive message', function(msg){
+          $('#messages').append($('<li>').text(msg));
+        });
+      });
+    </script>
+  </body>
+</html>-->
